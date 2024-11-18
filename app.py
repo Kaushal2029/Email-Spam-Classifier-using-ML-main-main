@@ -9,15 +9,12 @@ import nltk
 from nltk.corpus import stopwords
 import re
 
-# Suppress specific warnings
 warnings.filterwarnings("ignore", category=UserWarning, module='sklearn')
 
 app = Flask(__name__)
 
-# Ensure stopwords are downloaded
 nltk.download('stopwords')
 
-# Text Preprocessing (Simplified)
 def preprocess_text(text):
     text = text.lower()  # Convert to lowercase
     text = re.sub(r'\b\w{1,2}\b', '', text)  # Remove short words
