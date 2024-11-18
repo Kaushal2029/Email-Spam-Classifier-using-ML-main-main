@@ -16,7 +16,7 @@ app = Flask(__name__)
 nltk.download('stopwords')
 
 def preprocess_text(text):
-    text = text.lower()  # Convert to lowercase
+    text = text.lower() 
     text = re.sub(r'\b\w{1,2}\b', '', text)  # Remove short words
     text = re.sub(r'[^\w\s]', '', text)  # Remove punctuation
     stop_words = set(stopwords.words('english'))
